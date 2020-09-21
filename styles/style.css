@@ -126,7 +126,7 @@ table {
 * {
   box-sizing: border-box;
   max-width: 100%;
-  /* border: 1px solid grey; */
+  border: 1px solid grey;
 }
 html {
   font-size: 62.5%;
@@ -172,6 +172,7 @@ nav a {
   background-image: url('herohouse.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -197,4 +198,37 @@ nav a {
 .container {
   width: 60%;
   margin: 0 auto;
+}
+.info {
+  display: flex;
+  margin: 10% 0;
+}
+.img-div {
+  width: 40%;
+}
+.info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+.info-content h3 {
+  font-size: 3rem;
+}
+.info-content p {
+  font-size: 2rem;
+  font-style: italic;
+  width: 80%;
+  margin-top: 5%;
+}
+#info-reverse {
+  flex-direction: row-reverse;
+}
+footer {
+  text-align: center;
+  padding: 2%;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
 }
