@@ -119,6 +119,7 @@ h1, h3 {
 }
 
 .summary div {
+    width: 30%;
 }
 
 .summary h2 {
@@ -237,7 +238,7 @@ footer {
 
 @media (max-width: 1024px) {
     .flexbox {
-        width: 33%;
+        width: 40%;
     }
 }
 
