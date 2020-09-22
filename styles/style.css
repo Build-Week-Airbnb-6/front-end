@@ -81,7 +81,7 @@ audio,
 video {
   margin: 0;
   padding: 0;
-  /* border: 0; */
+  border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
@@ -136,6 +136,7 @@ body {
   line-height: 1.5;
   font-family: 'Montserrat', sans-serif;
 }
+/* Nav Bar */
 header {
   display: flex;
   justify-content: space-around;
@@ -179,6 +180,8 @@ nav a {
   width: 20%;
   text-align: center;
 }
+
+/* Splash Image */
 .hero-img {
   background-image: url('../images/herohouse.jpg');
   background-size: cover;
@@ -207,6 +210,8 @@ nav a {
   text-align: center;
   padding: 1%;
 }
+
+/* Page Info */
 .container {
   width: 60%;
   margin: 0 auto;
