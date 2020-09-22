@@ -23,6 +23,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	font-size: 100%;
 	font: inherit;
     vertical-align: baseline;
     font-size: 62.5%;
@@ -52,6 +53,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* General Styling  */
 
 /* Header and Nav Styling  */
 
@@ -102,111 +105,91 @@ nav a {
     transition-duration: 700ms;
 }
 
-/* main styling  */
 
-.main {
-    background-image: url('https://images.unsplash.com/photo-1566195992011-5f6b21e539aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80');
-    height: 80vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: 65%;
-    display: flex;
-    align-items: center;
-}
-
-.main-content {
-    font-weight: 700;
-    font-size: 40px;
-    width: 30%;
-    margin-left: 4%;
-    display: flex;
-    flex-direction: column;
-    background: rgba(174, 213, 239, 0.8);
-    border-radius: 10px;
-    padding: 2%;
-}
-
-.main-content h1 {
+h1, h3 {
+    font-size: 5rem;
     text-align: center;
-    color: #5b5b5c ;
-    margin-bottom: 5%;
-    line-height: 1.5;
-    font-size: 4rem;
+    margin: 4%;
 }
 
-.main-content a {
+.summary {
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin: 0 auto;
+}
+
+.summary div {
+}
+
+.summary h2 {
     font-size: 3rem;
-    background: #96cf1d;
-    color: white;
-    text-decoration: none;
-    padding: 3%;
-    border-radius: 10px;
-    font-weight: 400;
 }
 
-.main-content a:hover {
-    color: #96cf1d;
-    background: white;
-    transition-duration: 700ms;
+.summary p {
+    font-size: 1.5rem;
+    padding: 0 15%;
 }
 
-/* info section  */
+hr {
+    max-width: 20rem;
+    border: 3px solid rgb(174, 213, 239);
+    border-radius: 5px;
+    margin: 5% auto;
+}
 
-.info {
+.flex-container {
     display: flex;
-    justify-content: space-around;
-    margin: 5% 0;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
-.info div {
-    width: 25%;
-    text-align: center;
-    border: 1px solid rgb(174, 213, 239);
+
+.flexbox div {
+    margin-left: 2%;
+    margin-bottom: 2%;
+    background: navy;
+    border-radius: 10px;
     padding: 1%;
 }
 
-.info img {
-    margin-bottom: 10%;
+.flexbox {
+    width: 25%;
+    height: 40vh;
+    background-size: cover;
+    filter: brightness(50%);
+    font-size: 4.5rem;
+    letter-spacing: 1.5;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-end;
+    color: orange;
 }
 
-.info h2 {
-    margin-bottom: 10%;
-    font-size: 3rem;
-    font-weight: 700;
+.flexbox:hover {
+    filter: brightness(100%);
+    transition-duration: 600ms;
+    transform: scale(1.1);
 }
 
-.info p {
-    font-size: 2rem;
-}
+.box1{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0123RQLG9M-cf6cb774b8f9-512');}
+.box2{background-image: url('https://ca.slack-edge.com/ESZCHB482-W01424H8613-716bcd658afa-512');}
+.box3{background-image: url('https://ca.slack-edge.com/ESZCHB482-W012XHU7JQH-2f3ade1f8608-512');}
+.box4{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0143NLFNE7-9cd67f73c858-512');}
+.box5{background-image: url('https://ca.slack-edge.com/ESZCHB482-W01636DJ7CH-10bbcf9d5d3c-512');}
+.box6{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0159QW4VCP-747f1406186a-512');}
+.box7{background-image: url('https://ca.slack-edge.com/ESZCHB482-W015HR76WLW-f0bd72e6ea09-512');}
+.box8{background-image: url('https://ca.slack-edge.com/ESZCHB482-W017N8WFJUS-67aa03841f9d-512');}
+.box9 {background-image: url('https://ca.slack-edge.com/ESZCHB482-W0198G6ESHZ-9697c71419a1-512');}
+.box10{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0198A4R05Q-2bc2c2100aab-512');}
+.box11{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0198A5JMAN-e575b122dae8-512');}
 
-/* questions section */
-
-.questions {
-    background: lightgray;
-    padding: 2%;
-}
-
-.questions div {
-    margin: 2%;
-}
-
-.questions h2 {
-    margin-bottom: 2%;
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.questions p {
-    font-size: 2rem;
-}
 
 /* footer styling  */
 
 footer {
     background: rgba(174, 213, 239, 0.5);
     padding-top: 3%;
+    margin-top: 5%;
 }
 
 .footer-info {
@@ -250,46 +233,45 @@ footer {
     margin-bottom: 1%;
 }
 
-/* media queries (max width 850px) */
+/* media queries (max-width: 1024px) */
+
+@media (max-width: 1024px) {
+    .flexbox {
+        width: 33%;
+    }
+}
+
+/* media queries (max width 800px) */
 
 @media (max-width: 800px) {
     nav {
         margin-left: 10%;
     }
+    .summary {
+        flex-wrap: wrap;
+    }
+    .summary div {
+        width: 50%;
+        margin-bottom: 4%;
+    }
     .navbar a {
         display: inline-block;
         width: 20%;
     }
-    
     #nav-button a {
         padding: 2%;
         width: 10%;
         margin-right: 0;
     }
-    .main {
-        height: 40vh;
-    }
-    .main-content h1 {
-        font-size: 2rem;
-    }
-    .main-content a {
-        font-size: 1.5rem;
-    }
-    .info div {
-        width: 30%;
-    }
-    .info h2 {
-        font-size: 1.5rem;
-    }
-    .questions p {
-        margin: 5% 0;
+    .flexbox {
+        width: 50%;
     }
     .copyright img {
         margin-left: 5%
     }
 }
 
-/* Media queries for max-width 525px  */
+/* Media queries for max-width 500px  */
 
 @media (max-width: 500px) {
     header {
@@ -313,40 +295,17 @@ footer {
     #nav-button {
         padding: 3%;
     }
-    .main {
-        background-size: 550px;
-        background-position-x: 40%;
-    }
-    .main-content {
-        margin-top: 50%;
-    }
-    .main-content h1 {
-        font-size: 15px;
-    }
-    .info {
-        flex-direction: column;
-    }
-    .info div {
+    .summary div {
         width: 100%;
-        margin-bottom: 5%;
     }
-    .info h2 {
-        margin-bottom: 5%;
-        font-size: 2.5rem;
+    .flexbox {
+        width: 100%;
     }
-    .info img {
-        margin-bottom: 5%;
+    .flexbox:hover {
+        transform: scale(1.05);
     }
-    .info p {
-        padding: 0 5%;
-        font-size: 2rem;
-    }
-    .questions {
+    .footer a {
         text-align: center;
-        padding: 4%;
-    }
-    .questions div {
-        padding: 4% 2%;
     }
     .footer-info {
         flex-direction: row;
@@ -358,5 +317,6 @@ footer {
     #socialMedia a {
         margin-bottom: 0%;
         padding: 4%;
+        text-align: center;
     }
 }
