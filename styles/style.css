@@ -219,6 +219,9 @@ nav a {
 .img-div {
   width: 40%;
 }
+.img-div img {
+  border-radius: 2rem;
+}
 .info-content {
   display: flex;
   flex-direction: column;
@@ -249,4 +252,61 @@ footer {
   background-color: black;
   color: white;
   font-size: 2rem;
+}
+
+/*800px Media Quries */
+@media (max-width: 800px) {
+  header a {
+    font-size: 2rem;
+    width: 50%;
+  }
+  header img {
+    width: 20%;
+  }
+  .logo a {
+    width: 70%;
+  }
+  .hero-content {
+    width: 80%;
+  }
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  .container {
+    width: 90%;
+  }
+  .info-content h3 {
+    font-size: 1.6rem;
+  }
+  .info-content p,
+  ul {
+    font-size: 1.4rem;
+  }
+  footer {
+    font-size: 1.4rem;
+  }
+}
+/* Media Quries 500px */
+@media (max-width: 500px) {
+  .logo a {
+    width: 90%;
+  }
+  .container {
+    margin-top: 5%;
+  }
+  .info {
+    flex-direction: column;
+  }
+  #info-reverse {
+    flex-direction: column;
+  }
+  .img-div {
+    width: 75%;
+  }
+  .info-content {
+    width: 100%;
+  }
 }
