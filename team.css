@@ -146,6 +146,7 @@ hr {
 
 .flexbox div {
     margin-left: 2%;
+    margin-bottom: 2%;
     background: navy;
     border-radius: 10px;
     padding: 1%;
@@ -232,7 +233,15 @@ footer {
     margin-bottom: 1%;
 }
 
-/* media queries (max width 850px) */
+/* media queries (max-width: 1024px) */
+
+@media (max-width: 1024px) {
+    .flexbox {
+        width: 33%;
+    }
+}
+
+/* media queries (max width 800px) */
 
 @media (max-width: 800px) {
     nav {
@@ -253,7 +262,7 @@ footer {
     }
 }
 
-/* Media queries for max-width 525px  */
+/* Media queries for max-width 500px  */
 
 @media (max-width: 500px) {
     header {
