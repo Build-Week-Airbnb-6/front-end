@@ -27,9 +27,11 @@ time, mark, audio, video {
 }
 html {
     font-size: 62.5%;
+    color: #484848;
 }
 body {
-    font-size: 2rem;
+    font-family: Helvetica Neue, sans-serif;
+    font-size: 1.8rem;
     line-height: 1.5;
     position: relative;
     min-height: 100vh;
@@ -41,6 +43,13 @@ a {
 h1 {
     font-size: 4.5rem;
     line-height: 1;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3rem;
+    font-weight: bold;
 }
 /* Header / Nav Bar */
 header {
@@ -58,6 +67,7 @@ nav a {
     display: flex;
     margin: 0 5%;
     border-bottom: 2px solid #008489;
+    font-size: 2rem;
 }
 nav a:hover {
     border-top: 2px solid #008489;
@@ -95,7 +105,6 @@ nav a:hover {
 }
 .titleClear {
     clear: both;
-    width: 30%;
 }
 .titleBox {
     width: 25%;
@@ -111,8 +120,32 @@ nav a:hover {
 }
 
 /* Info */
-
-
+.firstInfo {
+    margin: 2% auto;
+    width: 80%;
+    display: flex;
+}
+.firstInfo div {
+    margin: auto 5%;
+}
+.secondInfo {
+    margin: 5% auto;
+    padding-top: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #484848;
+}
+.secondInfo div {
+    margin-bottom: 2%;
+}
+.threeReasons {
+    display: flex;
+}
+.threeReasons div {
+    padding: 0 3%;
+}
 
 /* Footer */
 footer {
@@ -124,7 +157,7 @@ footer {
     font: inherit;
     display: block;
     background: rgba(174, 213, 239, 0.5);
-    padding: 3% 0;
+    padding-top: 2%;
 }
 .footer-info {
     margin: 0;
@@ -145,4 +178,15 @@ footer {
     vertical-align: baseline;
     display: flex;
     flex-direction: column;
+}
+.copyright {
+    margin-top: 1%;
+    text-align: center;
+}
+.copyright img {
+    display: inline;
+}
+.copyright p {
+    display: inline;
+    margin-left: 0.5%;
 }
