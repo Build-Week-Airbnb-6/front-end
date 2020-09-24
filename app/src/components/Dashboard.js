@@ -1,47 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
-import { fetchProperties } from '../store/actions';
-import PropertyList from './PropertyList';
-import PropertyForm from './PropertyForm';
-import { useHistory } from 'react-router-dom';
-
-const Dashboard = (props) => {
-    const [propertyList, setPropertyList] = useState([]);
-    const history = useHistory();
-
-    const getPropertyList = () => {
-        axiosWithAuth()
-            .get('/api/properties')
-            .then((response) => setPropertyList(response.data.properties))
-            .catch((err) => console.log(err));
-    }
-
+import React, { useState, useEffect } from "react" 
+import axios from "axios"
+const Dashboard = () => {
+    const [state, setStates] = useState([])
     useEffect(() => {
-        getPropertyList();
-    }, []);
-
+      axios.get("https://swapi.dev/api/people/")
+        .then(res => {
+          console.log(res.data.results)
+          setStates(res.data.results);
+        })
+        .catch(err => {
+          
+        })
+    }, []) 
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <h2>Properties:</h2>
-            <PropertyList/>
-            <br></br>
-            <PropertyForm/>
+        <div className="App">
+          <h1 className = "Header">Characters</h1>
+          <div className="content">
+          {state.map((character, index) => {
+                    return(
+                    <div className = "names">
+                        <h2>{character.name}</h2>
+                    </div>
+                    )
+                })}
+          </div>
         </div>
-    )
-}
-
-const mapStateToProps = (state) => {
-    return {
-        properties: state.properties,
-        isLoading: state.isLoading,
-        data: state.data,
-        error: state.error,
-        user_id: state.user_id,
-    }
-}
-
-
-export default connect(mapStateToProps, { fetchProperties })(Dashboard);
+    );
+  }
+export default Dashboard
