@@ -4,25 +4,33 @@ import * as yup from 'yup';
 import axios from 'axios';
 export default function Login() {
   const defaultState = {
-    name: '',
-    email: '',
+    username: '',
     password: '',
-    position: '',
   };
   const [formState, setFormState] = useState(defaultState);
   const [errors, setErrors] = useState({ ...defaultState});
   let formSchema = yup.object().shape({
-    name: yup.string().required('Input a username.'),
-    email: yup.string().required('Input an email.').email('Not a valid email.'),
+    username: yup.string().required('Input a username.'),
     terms: yup.boolean().oneOf([true], 'You must to the terms and conditions')
   });
 
   const formSubmit = e => {
     e.preventDefault();
     console.log('form submitted!');
-    axios
-      .post('https://reqres.in/api/users', formState)
-      .then(() => console.log('form submitted success'))
+    axios.post(
+      'https://camhonis-airbnb.herokuapp.com/login',
+      `grant_type=password&username=${formState.username}&password=${formState.password}`,
+      {
+        headers: {
+            Authorization: `Basic bGFtYmRhLWNsaWVudDpsYW1iZGEtc2VjcmV0`,
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }
+    )
+      .then(res => {
+        localStorage.setItem('token', res.data.access_token)
+        console.log(res.data)
+      })
       .catch(err => console.log(err));
   };
 
@@ -48,11 +56,11 @@ export default function Login() {
   return (
     <form onSubmit={formSubmit}>
       <Input
-        type='email'
-        name='email'
+        type='text'
+        name='username'
         onChange={inputChange}
-        value={formState.email}
-        label='Email'
+        value={formState.name}
+        label='Username'
         errors={errors}
       />
       <Input
