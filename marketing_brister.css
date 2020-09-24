@@ -1,0 +1,335 @@
+html, body, div, span, applet, object, iframe,  
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,  
+a, abbr, acronym, address, big, cite, code,  
+del, dfn, em, img, ins, kbd, q, s, samp,  
+small, strike, strong, sub, sup, tt, var,  
+b, u, i, center,  
+dl, dt, dd, ol, ul, li,  
+fieldset, form, label, legend,  
+table, caption, tbody, tfoot, thead, tr, th, td,  
+article, aside, canvas, details, embed,  
+figure, figcaption, footer, header, hgroup,  
+menu, nav, output, ruby, section, summary,  
+time, mark, audio, video {
+    margin: 0;  
+    padding: 0;  
+    border: 0;  
+    font-size: 100%;  
+    font: inherit;  
+    vertical-align: baseline;  
+}
+
+
+/* General Styles */
+* {
+    box-sizing:border-box;
+    max-width:100%;
+}
+html {
+    font-size: 62.5%;
+    color: #484848;
+}
+body {
+    font-family: Helvetica Neue, sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    position: relative;
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: #008489;
+}
+h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+/* Header / Nav Bar */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    margin: 2% 2% 1% 2%;
+}
+nav {
+    display: flex;
+    margin: auto;
+}
+nav a {
+    display: flex;
+    margin: 0 5%;
+    border-bottom: 2px solid #008489;
+    font-size: 2rem;
+}
+nav a:hover {
+    border-top: 2px solid #008489;
+    font-weight: bold;
+}
+.getStarted {
+    background-image: radial-gradient(circle at center,
+    #FF385C 0%,
+    #E61E4D 27.5%,
+    #E31C5F 40%,
+    #D70466 57.5%,
+    #BD1E59 75%,
+    #BD1E59 100%);
+    padding: 0.25%;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 1%;
+}
+.getStarted a {
+    color: white !important;
+}
+.getStarted:hover {
+    font-weight: bold;
+}
+
+/* Main Title & Image */
+.title {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    background-image: url("https://a0.muscache.com/4ea/air/v2/pictures/9d08d356-59b9-4ac4-9f41-5b9c13c2b211.jpg?t=n:ope,e:fwebp-c75");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.titleClear {
+    clear: both;
+}
+.titleBox {
+    width: 25%;
+    height: 20%;
+    background-color: white;
+    margin: 5% 0 30% 0;
+    border-radius: 8px;
+    padding: 0.5% 0;
+}
+.titleBox div {
+    padding: 2%;   
+    margin: 1%; 
+}
+
+/* Info */
+.firstInfo {
+    margin: 2% auto;
+    width: 80%;
+    display: flex;
+}
+.firstInfo div {
+    margin: auto 5%;
+}
+.secondInfo {
+    margin: 5% auto;
+    padding-top: 5%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #484848;
+}
+.secondInfo div {
+    margin-bottom: 2%;
+}
+.threeReasons {
+    display: flex;
+}
+.threeReasons div {
+    padding: 0 3%;
+}
+
+/* Footer */
+footer {
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    display: block;
+    background: rgba(174, 213, 239, 0.5);
+    padding-top: 2%;
+}
+.footer-info {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    display: flex;
+    flex-direction: column;
+}
+.copyright {
+    margin-top: 1%;
+    text-align: center;
+}
+.copyright img {
+    display: inline;
+}
+.copyright p {
+    display: inline;
+    margin-left: 0.5%;
+}
+
+/* desktop*/
+@media (max-width: 1024px) {
+    .title {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .titleBox {
+        margin-left: 5%;
+        width: 35%;
+    }
+}
+/* tablet*/
+@media (max-width: 800px) {
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .titleBox {
+        margin:60% 15% 2% 2%;
+        width: 80%;
+    }
+    .firstInfo div {
+        margin: 2% auto;
+        padding: 2%;
+    }
+}
+/* mobile */
+@media (max-width: 500px) {
+    * {
+        max-width: 500px;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 1%;
+    }
+    .title {
+        background-size: contain;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .titleBox {
+        text-align: center;
+        margin: 50% auto 2% auto;
+    }
+    .secondInfo {
+        width: 100%;
+    }
+    .secondInfo div {
+        margin: 1%;
+    }
+    .secondInfo div h2 {
+        text-align: center;
+    }
+    .threeReasons {
+        display: flex;
+        flex-direction: column;
+        margin:0 auto;
+    }
+    .threeReasons div {
+        text-align: center;
+        width: 100%;
+        padding: 1%;
+    }
+}
+
+/* About Page */
+.aboutTitle {
+    background-color: rgba(255,248,220,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+.aboutTitle div {
+    text-align: center;
+    margin: 1% 0;
+    width: 50%;
+}
+.aboutTitle h1 {
+    font-weight: bold;
+}
+.aboutTitle .getStarted {
+    width: 15%;
+}
+.dataPoints {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 2% auto;
+}
+.dataPoints section {
+    display: flex;
+    justify-content: space-around;
+    margin: 2% 0;
+    padding: 1% 0;
+    border-bottom: 2px solid #008489;
+}
+.dataPoints section div {
+    margin: auto;
+    width: 30%;
+    text-align: center;
+}
+.factors ul{
+    text-align: center;
+    list-style: none;
+}
+/* About 800px */
+@media (max-width: 800px) {
+    .dataPoints section {
+        display: flex;
+        flex-direction: column;
+    }
+    .dataPoints section div {
+        width: 80%;
+    }
+}
+/* About 500px */
+@media (max-width: 500px) {
+    .aboutTitle div {
+        width: 100%;
+    }
+    .aboutTitle .getStarted {
+        width: 35%;
+    }
+    .dataPoints {
+        width: 90%;
+    }
+    .dataPoints section div {
+        width: 100%;
+    }
+    .data-img {
+        width: 100%
+    }
+}

@@ -1,0 +1,324 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+}
+/* Nav Bar */
+header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  color: red;
+  z-index: 2;
+  border-bottom: 1px solid black;
+}
+header .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+}
+header a {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  text-decoration: none;
+  color: red;
+  width: 50%;
+}
+header img {
+  width: 20%;
+}
+nav {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  margin: 2%;
+  color: red;
+  width: 50%;
+  text-align: center;
+}
+nav a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Splash Image */
+.hero-img {
+  background-image: url('../images/herohouse.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-content {
+  background-color: white;
+  color: red;
+  width: 60%;
+  border-radius: 3rem;
+  opacity: 0.8;
+}
+.hero-content h1 {
+  font-size: 8rem;
+  text-align: center;
+  padding: 1%;
+}
+.hero-content h2 {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1%;
+}
+
+/* Page Info */
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+.info {
+  display: flex;
+  margin: 10% 0;
+  align-items: center;
+}
+.img-div {
+  width: 40%;
+}
+.img-div img {
+  border-radius: 2rem;
+}
+.info-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+.info-content h3 {
+  font-size: 2rem;
+}
+.info-content p,
+ul {
+  font-size: 1.6rem;
+  font-style: italic;
+  width: 80%;
+  margin-top: 5%;
+  text-align: center;
+}
+li:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.info-content p a {
+  color: black;
+}
+#info-reverse {
+  flex-direction: row-reverse;
+}
+footer {
+  text-align: center;
+  padding: 2%;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+}
+
+/* 800px Media Quries */
+@media (max-width: 800px) {
+  header a {
+    font-size: 2rem;
+    width: 50%;
+  }
+  header img {
+    width: 20%;
+  }
+  .logo a {
+    width: 70%;
+  }
+  .hero-content {
+    width: 80%;
+  }
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  .container {
+    width: 90%;
+  }
+  .info-content h3 {
+    font-size: 1.6rem;
+  }
+  .info-content p,
+  ul {
+    font-size: 1.4rem;
+  }
+  footer {
+    font-size: 1.4rem;
+  }
+}
+/* Media Quries 500px */
+@media (max-width: 500px) {
+  .logo a {
+    width: 90%;
+  }
+  .container {
+    margin-top: 5%;
+  }
+  .info {
+    flex-direction: column;
+  }
+  #info-reverse {
+    flex-direction: column;
+  }
+  .img-div {
+    width: 75%;
+  }
+  .info-content {
+    width: 100%;
+  }
+}
