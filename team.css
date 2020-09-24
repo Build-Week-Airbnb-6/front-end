@@ -1,0 +1,323 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+    border: 1px solid gray;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    vertical-align: baseline;
+    font-size: 62.5%;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* General Styling  */
+
+/* Header and Nav Styling  */
+
+header {
+    display: flex;
+    align-items: center;
+    background: rgba(174, 213, 239, 0.5);
+}
+
+header h2 {
+    margin-left: 2%;
+    width: 15%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #5b5b5c;
+}
+
+nav {
+    width: 60%;
+    display: inline-block;
+    justify-content: flex-end;
+    margin-left: 25%;
+}
+
+nav a {
+    margin-right: 5%;
+    text-decoration: none;
+    font-size: 1.75rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#nav-button {
+    background: #96cf1d;
+    color: white;
+    text-decoration: none;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+#nav-button:hover {
+    color: #96cf1d;
+    background: white;
+    transition-duration: 700ms;
+}
+
+
+h1, h3 {
+    font-size: 5rem;
+    text-align: center;
+    margin: 4%;
+}
+
+.summary {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.summary div {
+    width: 30%;
+}
+
+.summary h2 {
+    font-size: 3rem;
+}
+
+.summary p {
+    font-size: 1.5rem;
+    padding: 0 15%;
+}
+
+hr {
+    max-width: 20rem;
+    border: 3px solid rgb(174, 213, 239);
+    border-radius: 5px;
+    margin: 5% auto;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+.flexbox div {
+    margin-left: 2%;
+    margin-bottom: 2%;
+    background: navy;
+    border-radius: 10px;
+    padding: 1%;
+}
+
+.flexbox {
+    width: 25%;
+    height: 40vh;
+    background-size: cover;
+    filter: brightness(50%);
+    font-size: 4.5rem;
+    letter-spacing: 1.5;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-end;
+    color: orange;
+}
+
+.flexbox:hover {
+    filter: brightness(100%);
+    transition-duration: 600ms;
+    transform: scale(1.1);
+}
+
+.box1{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0123RQLG9M-cf6cb774b8f9-512');}
+.box2{background-image: url('https://ca.slack-edge.com/ESZCHB482-W01424H8613-716bcd658afa-512');}
+.box3{background-image: url('https://ca.slack-edge.com/ESZCHB482-W012XHU7JQH-2f3ade1f8608-512');}
+.box4{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0143NLFNE7-9cd67f73c858-512');}
+.box5{background-image: url('https://ca.slack-edge.com/ESZCHB482-W01636DJ7CH-10bbcf9d5d3c-512');}
+.box6{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0159QW4VCP-747f1406186a-512');}
+.box7{background-image: url('https://ca.slack-edge.com/ESZCHB482-W015HR76WLW-f0bd72e6ea09-512');}
+.box8{background-image: url('https://ca.slack-edge.com/ESZCHB482-W017N8WFJUS-67aa03841f9d-512');}
+.box9 {background-image: url('https://ca.slack-edge.com/ESZCHB482-W0198G6ESHZ-9697c71419a1-512');}
+.box10{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0198A4R05Q-2bc2c2100aab-512');}
+.box11{background-image: url('https://ca.slack-edge.com/ESZCHB482-W0198A5JMAN-e575b122dae8-512');}
+
+
+/* footer styling  */
+
+footer {
+    background: rgba(174, 213, 239, 0.5);
+    padding-top: 3%;
+    margin-top: 5%;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 15%;
+    margin-left: 5%;
+}
+
+.footer-section a {
+    padding: 7%;
+    text-decoration: none;
+    font-size: 1.75rem;
+}
+
+#socialMedia a {
+    margin-bottom: 20%;
+}
+
+.copyright img {
+    display: inline;
+    margin-right: 1%;
+    margin-left: 10%;
+    margin-top: 2%;
+    
+}
+
+.copyright p {
+    display: inline;
+    font-size: 15px;
+    margin-bottom: 1%;
+}
+
+/* media queries (max-width: 1024px) */
+
+@media (max-width: 1024px) {
+    .flexbox {
+        width: 40%;
+    }
+}
+
+/* media queries (max width 800px) */
+
+@media (max-width: 800px) {
+    nav {
+        margin-left: 10%;
+    }
+    .summary {
+        flex-wrap: wrap;
+    }
+    .summary div {
+        width: 50%;
+        margin-bottom: 4%;
+    }
+    .navbar a {
+        display: inline-block;
+        width: 20%;
+    }
+    #nav-button a {
+        padding: 2%;
+        width: 10%;
+        margin-right: 0;
+    }
+    .flexbox {
+        width: 50%;
+    }
+    .copyright img {
+        margin-left: 5%
+    }
+}
+
+/* Media queries for max-width 500px  */
+
+@media (max-width: 500px) {
+    header {
+        flex-direction: column;
+    }
+    header h2 {
+        width: 100%;
+        text-align: center;
+    }
+    .navbar {
+        flex-direction: column;
+        margin-right: 10%;
+        margin-top: 5%;
+        text-align: center;
+    }
+    .navbar a {
+        margin: 5% 0;
+        width: 50%;
+        font-size: 20px;
+    }
+    #nav-button {
+        padding: 3%;
+    }
+    .summary div {
+        width: 100%;
+    }
+    .flexbox {
+        width: 100%;
+    }
+    .flexbox:hover {
+        transform: scale(1.05);
+    }
+    .footer a {
+        text-align: center;
+    }
+    .footer-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .footer-section {
+        width: 50%;
+    }
+    #socialMedia a {
+        margin-bottom: 0%;
+        padding: 4%;
+        text-align: center;
+    }
+}
