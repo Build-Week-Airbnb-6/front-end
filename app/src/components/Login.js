@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom'
 import Input from './Input';
 import * as yup from 'yup';
 import axios from 'axios';
+import Nav from './Nav'
+
 export default function Login() {
   const defaultState = {
     username: '',
@@ -9,6 +12,7 @@ export default function Login() {
   };
   const [formState, setFormState] = useState(defaultState);
   const [errors, setErrors] = useState({ ...defaultState});
+  const history = useHistory()
   let formSchema = yup.object().shape({
     username: yup.string().required('Input a username.'),
     terms: yup.boolean().oneOf([true], 'You must to the terms and conditions')
@@ -16,7 +20,7 @@ export default function Login() {
 
   const formSubmit = e => {
     e.preventDefault();
-    console.log('form submitted!');
+    localStorage.setItem('username', formState.username)
     axios.post(
       'https://camhonis-airbnb.herokuapp.com/login',
       `grant_type=password&username=${formState.username}&password=${formState.password}`,
@@ -30,6 +34,7 @@ export default function Login() {
       .then(res => {
         localStorage.setItem('token', res.data.access_token)
         console.log(res.data)
+        history.push('/')
       })
       .catch(err => console.log(err));
   };
@@ -54,6 +59,8 @@ export default function Login() {
     validateChange(e);
   };
   return (
+    <>
+    <Nav />
     <form onSubmit={formSubmit}>
       <Input
         type='text'
@@ -73,5 +80,6 @@ export default function Login() {
       />
       <button>Submit</button>
     </form>
+    </>
   );
 }

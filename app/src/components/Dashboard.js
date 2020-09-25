@@ -1,47 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
-import { fetchProperties } from '../store/actions';
-import PropertyList from './PropertyList';
-import PropertyForm from './PropertyForm';
-import { useHistory } from 'react-router-dom';
+import React,{useContext, useState, useEffect} from 'react'
+import AxiosWithAuth from '../utils/axiosWithAuth'
+import { UserContext } from '../utils/UserContext'
+import Property from './Property'
 
-const Dashboard = (props) => {
-    const [propertyList, setPropertyList] = useState([]);
-    const history = useHistory();
-
-    const getPropertyList = () => {
-        axiosWithAuth()
-            .get('/api/properties')
-            .then((response) => setPropertyList(response.data.properties))
-            .catch((err) => console.log(err));
-    }
+export default function Dashboard(props){
+    const {userid, setUserid} = useContext(UserContext)
+    const [properties, setProperties] = useState([])
 
     useEffect(() => {
-        getPropertyList();
-    }, []);
+        AxiosWithAuth().get('/users/user/name/' + localStorage.getItem('username'))
+            .then(res => {
+                console.log(res.data)
+                setProperties(res.data.properties)
+            })
+            .catch(err => console.log(err))
+    },[])
 
-    return (
-        <div>
-            <h1>Dashboard</h1>
-            <h2>Properties:</h2>
-            <PropertyList/>
-            <br></br>
-            <PropertyForm/>
+    let key=0
+    return(
+        <div className='Dashboard'>
+            <h2>{'Welcome back, ' + localStorage.getItem('username')}</h2>
+            {properties.map(v => <Property propertyData={v} key={key++}/>)}
         </div>
     )
 }
-
-const mapStateToProps = (state) => {
-    return {
-        properties: state.properties,
-        isLoading: state.isLoading,
-        data: state.data,
-        error: state.error,
-        user_id: state.user_id,
-    }
-}
-
-
-export default connect(mapStateToProps, { fetchProperties })(Dashboard);

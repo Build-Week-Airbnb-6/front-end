@@ -1,20 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Nav from './components/Nav.js';
+import { UserContext } from './utils/UserContext'
+import PrivateRoute from './utils/PrivateRoute'
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Dashboard from './components/Dashboard'
 function App() {
+  const [userid, setUserid] = useState(0)
   return (
-    <Router>
-      <div className='App'>
-        <Nav />
-        <Switch>
-          <Route exact path='/' component={Login} />
-          <Route path='/Signup' component={Signup} />
-        </Switch>
-      </div>
-    </Router>
+    <UserContext.Provider value={{userid, setUserid}}>
+      <Router>
+        <div className='App'>
+          <Switch>
+            <PrivateRoute exact path='/' component={Dashboard} />
+            <Route path='/signup' component={Signup} />
+            <Route path='/login' component={Login} />
+          </Switch>
+        </div>
+      </Router>
+    </UserContext.Provider>
   );
 }
 export default App;
