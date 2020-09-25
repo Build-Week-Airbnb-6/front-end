@@ -1,4 +1,4 @@
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { AxiosWithAuth } from '../utils/AxiosWithAuth';
 
 export const LOGIN_START = 'LOGIN_START';
 export const FETCH_LOGIN_SUCCESS = 'FETCH-LOGIN-SUCCESS';
@@ -12,7 +12,7 @@ export const FETCH_SPECIFIC_PROPERTY = 'FETCH_SPECIFIC_PROPERTY';
 export const fetchProperties = (id) => {
     return (dispatch) => {
         dispatch({ type: LOGIN_START});
-        axiosWithAuth()
+        AxiosWithAuth()
             .get(`/api/properties`)
             .then((res) => {
                 console.log(res);
@@ -26,7 +26,7 @@ export const fetchProperties = (id) => {
 export const signUp = (client) => {
     return(dispatch) => {
         dispatch({type: LOGIN_START});
-        axiosWithAuth()
+        AxiosWithAuth()
             .post('/api/auth/register', client)
             .then((res) => {
                 console.log(res);
@@ -38,7 +38,7 @@ export const signUp = (client) => {
 }
 
 export const xyz = (id) => {
-    axiosWithAuth()
+    AxiosWithAuth()
     .get(`/api/properties/` + id )
     .then(res => {
         console.log(res)
@@ -53,7 +53,7 @@ export const DELETE_PROPERTY_FAILURE = 'DELETE_PROPERTY_FAILURE';
 
 export const deleteProperty = (id) => (dispatch) => {
     dispatch({ type: DELETE_PROPERTY});
-    axiosWithAuth()
+    AxiosWithAuth()
         .delete(`/api/properties/${id}`)
         .then(res => {
             dispatch({ type: DELETE_PROPERTY_SUCCESS, payload:id})

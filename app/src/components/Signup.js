@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import {useHistory} from 'react-router-dom'
 import Input from './Input';
 import * as yup from 'yup';
-import AxiosWithAuth from "./AxiosAuth"
+import AxiosWithAuth from '../utils/axiosWithAuth'
+import Nav from './Nav'
 
 export default function Form() {
   const defaultState = {
@@ -13,6 +15,7 @@ export default function Form() {
   const [formState, setFormState] = useState(defaultState);
   const [errors, setErrors] = useState({ ...defaultState, terms: '' });
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  const history = useHistory()
 
   
   let formSchema = yup.object().shape({
@@ -31,7 +34,7 @@ export default function Form() {
     e.preventDefault();
     console.log('Submitted!');
     AxiosWithAuth().post('/users/user', formState)
-    .then(res => console.log(res.data))
+    .then(res => history.push('/login'))
     .catch(err => console.log(err))
   };
 
@@ -56,6 +59,8 @@ export default function Form() {
   };
 
   return (
+    <>
+    <Nav />
     <form onSubmit={formSubmit}>
       <Input
         type='text'
@@ -87,5 +92,6 @@ export default function Form() {
       </label>
       <button disabled={buttonDisabled}>Signup!</button>
     </form>
+    </>
   );
 }
